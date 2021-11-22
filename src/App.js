@@ -1,5 +1,5 @@
 import "./styles.css";
-
+// 
 // function list(
 //   name,
 //   pronouns,
@@ -99,13 +99,49 @@ let data = [
   ],
   ["", "", "", "", "", "", "", ""]
 ];
-export default function App() {
-  for (let person of data) {
-  }
-
+function person(name, pronouns, school, year, color, media, animal, nickname) {
   return (
-    <div className="App">
-      <div className="List"></div>
+    <div className="row">
+      <span>{name}</span>
+      <span>{pronouns}</span>
+      <span>{school}</span>
+      <span>{year}</span>
+      <span>{color}</span>
+      <span>{media}</span>
+      <span>{animal}</span>
+      <span>{nickname}</span>
     </div>
   );
 }
+
+let display = data.map(function (person) {
+  return (
+    <div className="row">
+      <p>{person[0]}</p>
+      <p>{person[1]}</p>
+      <p>{person[2]}</p>
+      <p>{person[3]}</p>
+      <p>{person[4]}</p>
+      <p>{person[5]}</p>
+      <p>{person[6]}</p>
+      <p>{person[7]}</p>
+      {/* <span>{pronouns}</span>
+        <span>{school}</span>
+        <span>{year}</span>
+        <span>{color}</span>
+        <span>{media}</span>
+        <span>{animal}</span>
+        <span>{nickname}</span> */}
+    </div>
+  );
+});
+
+export default function App() {
+  return (
+    <div className="App">
+      <div className="List">{display}</div>
+    </div>
+  );
+}
+
+// Create a NEW variable that will store the HTML that is the looped data
